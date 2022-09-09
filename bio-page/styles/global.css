@@ -8,8 +8,6 @@
 
 	color: #fff;
 
-	transition: all 0.2s ease-in-out;
-
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-tap-highlight-color: transparent;
@@ -30,3 +28,335 @@
 	-webkit-tap-highlight-color: transparent;
 }
 
+.right-button,
+.left-button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	z-index: 1;
+
+	border: none;
+
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #1a1a1a;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	outline-offset: 4px;
+
+	transition: all 0.1s ease-in-out;
+}
+
+.arrow-button-face {
+	width: 100%;
+	height: 100%;
+
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border-radius: 50%;
+	background-color: #26272a;
+	color: #fff;
+
+	font-size: clamp(1rem, 4vw, 1.2rem);
+	text-align: center;
+
+	will-change: transform;
+	transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+	transform: translateY(-4px);
+}
+
+button:hover .arrow-button-face {
+	transform: translateY(-6px);
+	transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+button:active .arrow-button-face {
+	transform: translateY(-2px);
+}
+
+.right-button {
+	right: 16px;
+}
+
+.left-button {
+	left: 16px;
+}
+
+.right-button:hover::after {
+}
+
+.hidden {
+	display: none;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	overflow: hidden;
+	background-color: #1d1f1f;
+}
+
+header {
+	position: fixed;
+
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 72px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	z-index: 1;
+}
+
+main {
+	width: 200vw;
+	height: 100%;
+	max-height: 100%;
+	overflow: hidden;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main > section {
+	width: 100vw;
+	height: 45vh;
+	max-height: 100%;
+
+	overflow: hidden;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	gap: calc(16px + 1vw);
+}
+
+section > * {
+	flex-grow: 0;
+}
+
+@keyframes rotate-clip {
+	0% {
+		clip-path: polygon(57% 2%, 85% 13%, 94% 39%, 94% 61%, 84% 85%, 54% 94%, 27% 92%, 11% 70%, 3% 34%, 19% 10%);
+	}
+	10% {
+		clip-path: polygon(85% 13%, 94% 39%, 94% 61%, 84% 85%, 54% 94%, 27% 92%, 11% 70%, 3% 34%, 19% 10%, 57% 2%);
+	}
+	20% {
+		clip-path: polygon(94% 39%, 94% 61%, 84% 85%, 54% 94%, 27% 92%, 11% 70%, 3% 34%, 19% 10%, 57% 2%, 85% 13%);
+	}
+	30% {
+		clip-path: polygon(94% 61%, 84% 85%, 54% 94%, 27% 92%, 11% 70%, 3% 34%, 19% 10%, 57% 2%, 85% 13%, 94% 39%);
+	}
+	40% {
+		clip-path: polygon(84% 85%, 54% 94%, 27% 92%, 11% 70%, 3% 34%, 19% 10%, 57% 2%, 85% 13%, 94% 39%, 94% 61%);
+	}
+	50% {
+		clip-path: polygon(54% 94%, 27% 92%, 11% 70%, 3% 34%, 19% 10%, 57% 2%, 85% 13%, 94% 39%, 94% 61%, 84% 85%);
+	}
+	60% {
+		clip-path: polygon(27% 92%, 11% 70%, 3% 34%, 19% 10%, 57% 2%, 85% 13%, 94% 39%, 94% 61%, 84% 85%, 54% 94%);
+	}
+	70% {
+		clip-path: polygon(11% 70%, 3% 34%, 19% 10%, 57% 2%, 85% 13%, 94% 39%, 94% 61%, 84% 85%, 54% 94%, 27% 92%);
+	}
+	80% {
+		clip-path: polygon(3% 34%, 19% 10%, 57% 2%, 85% 13%, 94% 39%, 94% 61%, 84% 85%, 54% 94%, 27% 92%, 11% 70%);
+	}
+	90% {
+		clip-path: polygon(19% 10%, 57% 2%, 85% 13%, 94% 39%, 94% 61%, 84% 85%, 54% 94%, 27% 92%, 11% 70%, 3% 34%);
+	}
+	100% {
+		clip-path: polygon(57% 2%, 85% 13%, 94% 39%, 94% 61%, 84% 85%, 54% 94%, 27% 92%, 11% 70%, 3% 34%, 19% 10%);
+	}
+}
+
+section img {
+	height: 100%;
+
+	flex-grow: 0;
+
+	border-radius: 20px;
+	animation-name: rotate-clip;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-duration: 15s;
+
+	transition: all 200ms ease-in-out;
+
+	object-fit: contain;
+}
+
+section img:hover {
+	cursor: pointer;
+}
+
+section .container {
+	display: flex;
+
+	flex-direction: column;
+
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+
+	width: 25vw;
+
+	font-size: 1.5rem;
+}
+
+.subheader {
+	font-size: 0.9rem;
+	font-style: italic;
+
+	color: darkgray;
+}
+
+.greetings {
+	display: flex;
+	flex-direction: column;
+
+	text-align: center;
+
+	align-items: center;
+	justify-content: center;
+
+	margin-bottom: 8px;
+}
+
+.greetings h2 {
+	font-size: clamp(1rem, 5vw, 2rem);
+}
+
+.container .button-holder {
+	display: flex;
+
+	width: 100%;
+
+	gap: 8px;
+
+	justify-content: space-between;
+	align-items: center;
+}
+
+.left-side button {
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	background-color: #586baa;
+
+	outline-offset: 4px;
+
+	border: none;
+
+	transition: all 0.1s ease-in-out;
+	cursor: pointer;
+}
+
+.left-side .button-face {
+	width: 100%;
+	height: 100%;
+
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+
+	padding: 12px 4px;
+
+	border-radius: 8px;
+	background-color: #738ad8;
+	color: #fff;
+
+	font-size: clamp(1rem, 4vw, 1.2rem);
+	text-align: center;
+
+	will-change: transform;
+	transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+	transform: translateY(-4px);
+}
+
+button:hover .button-face {
+	transform: translateY(-6px);
+	transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+button:active .button-face {
+	transform: translateY(-2px);
+}
+
+button:focus:not(:focus-visible) {
+	outline: none;
+}
+
+button.green {
+	background-color: #075e54 !important;
+}
+
+button.green .button-face {
+	background-color: #128c7e !important;
+}
+
+button.pink {
+	background-color: #c13584 !important;
+}
+
+button.pink .button-face {
+	background-color: #e1306c !important;
+}
+
+button.black {
+	background-color: rgb(28, 28, 28) !important;
+}
+
+button.black .button-face {
+	background-color: rgb(35, 34, 34) !important;
+}
+
+.separator {
+	font-size: 0.75rem;
+	position: relative;
+	background-color: #1d1f1f;
+}
+
+.separator::before,
+.separator::after {
+	content: '';
+	width: 100%;
+	height: 1px;
+
+	background-color: #fff;
+}
+
+.separator::before {
+	position: absolute;
+	top: 50%;
+	left: -115%;
+}
+
+.separator::after {
+	position: absolute;
+	top: 50%;
+	left: 115%;
+}
