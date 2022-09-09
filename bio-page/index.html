@@ -5,31 +5,46 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./styles/components/button.css" />
+		<link rel="stylesheet" href="./styles/components/left-side.css" />
+		<link rel="stylesheet" href="./styles/components/right-side.css" />
 		<link rel="stylesheet" href="./styles/global.css" />
+		<link rel="stylesheet" href="./styles/mobile/small.css" />
 		<script src="https://kit.fontawesome.com/69e587e431.js" crossorigin="anonymous"></script>
 		<title>Robertonto</title>
 	</head>
 	<body>
-		<header>
-			<h1 class="left-side">Robertonto ☕</h1>
-			<h1 class="right-side hidden">O Roberto 😎</h1>
+		<header id="header">
+			<h1>Robertonto ☕</h1>
+			<h1>O Roberto 😎</h1>
 		</header>
 
-		<button type="button" aria-label="Right arrow" onclick="" class="right-button">
+		<button
+			type="button"
+			aria-label="Right arrow"
+			onclick="changeToRight()"
+			hidden
+			id="right-button"
+			class="right-button"
+		>
 			<div class="arrow-button-face">
 				<i class="fa-solid fa-chevron-right"></i>
 			</div>
 		</button>
-		<button type="button" aria-label="Left arrow" onclick="" class="left-button hidden">
+		<button
+			type="button"
+			aria-label="Left arrow"
+			onclick="changeToLeft()"
+			id="left-button"
+			class="left-button hidden"
+		>
 			<div class="arrow-button-face">
 				<i class="fa-solid fa-chevron-left"></i>
 			</div>
 		</button>
 
 		<main>
-			<section class="left-side">
+			<section id="left-section" class="left-side">
 				<img src="./assets/left-me.jpeg" alt="Me and my grandma" />
-				<span class="glow"></span>
 				<div class="container">
 					<div class="greetings">
 						<h2>Tudo bem?</h2>
@@ -39,8 +54,8 @@
 					<button
 						class="green"
 						type="button"
-						onclick="window.open('https://web.whatsapp.com/send?phone=5561983025990')"
-						aria-label="Discord button"
+						onclick="callOnWhatsApp()"
+						aria-label="WhatsApp button"
 					>
 						<div class="button-face">
 							<i class="fa-brands fa-whatsapp"></i>
@@ -50,11 +65,7 @@
 					<p class="separator">ou aqui</p>
 
 					<div class="button-holder">
-						<button
-							type="button"
-							onclick="window.open('https://discord.com/users/262736936546992130')"
-							aria-label="Discord button"
-						>
+						<button type="button" onclick="callOnDiscord()" aria-label="Discord button">
 							<div class="button-face">
 								<i class="fa-brands fa-discord"></i>
 							</div>
@@ -62,8 +73,8 @@
 						<button
 							class="pink"
 							type="button"
-							onclick="window.open('https://instagram.com/gabriel.rqueiroz')"
-							aria-label="Discord button"
+							onclick="callOnInstagram()"
+							aria-label="Instagram button"
 						>
 							<div class="button-face">
 								<i class="fa-brands fa-instagram"></i>
@@ -72,8 +83,8 @@
 						<button
 							class="black"
 							type="button"
-							onclick="window.open('https://steamcommunity.com/id/coffeey/')"
-							aria-label="Discord button"
+							onclick="callOnSteam()"
+							aria-label="Steam button"
 						>
 							<div class="button-face">
 								<i class="fa-brands fa-steam"></i>
@@ -82,12 +93,14 @@
 					</div>
 				</div>
 			</section>
-			<section class="right-side">
+			<section id="right-section" class="right-side">
 				<div class="container">
 					<h2>Seguro</h2>
 				</div>
 				<img src="./assets/right-me.jpeg" alt="Me and myself" />
 			</section>
 		</main>
+
+		<script src="javascript/index.js"></script>
 	</body>
 </html>

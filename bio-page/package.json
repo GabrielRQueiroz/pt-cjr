@@ -1,0 +1,10 @@
+{
+  "name": "Robertonto",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "https://www.github.com/GabrielRQueiroz/pt-cjr/tree/master/bio-page",
+  "license": "MIT",
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}

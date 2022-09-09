@@ -1,0 +1,25 @@
+/* 576px */
+
+@media screen and (max-width: 576px) {
+    header {
+        
+    }
+    
+	main > section {
+		flex-direction: column;
+
+		height: 100%;
+		width: 100%;
+
+		gap: 16px;
+	}
+
+	.left-side > img {
+		height: auto;
+		width: 50%;
+	}
+
+	section .container {
+		width: calc(50% + 5vw);
+	}
+}
