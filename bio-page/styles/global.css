@@ -145,7 +145,7 @@ main > section {
 	justify-content: center;
 	align-items: center;
 
-	gap: calc(16px + 1vw);
+	gap: calc(16px - 1vw);
 }
 
 section > * {
@@ -189,7 +189,7 @@ section > * {
 }
 
 section img {
-	height: 100%;
+	height: clamp(80%, 50vw, 100%);
 
 	flex-grow: 0;
 
@@ -218,7 +218,7 @@ section .container {
 	align-items: center;
 	gap: 16px;
 
-	width: 25vw;
+	width: calc(25vw + 16px);
 
 	font-size: 1.5rem;
 }
@@ -289,7 +289,7 @@ section .container {
 	background-color: #738ad8;
 	color: #fff;
 
-	font-size: clamp(1rem, 4vw, 1.2rem);
+	font-size: clamp(0.95rem, 3vw, 1.2rem);
 	text-align: center;
 
 	will-change: transform;
