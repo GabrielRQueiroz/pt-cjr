@@ -1,7 +1,26 @@
-.left-side img {
-	height: clamp(80%, 50vw, 100%);
+.left-side .image-holder {
+	position: relative;
+
+	height: clamp(40%, 40vw, 100%);
+	width: auto;
+
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
 
 	flex-grow: 0;
+}
+
+.left-side .image-holder:hover {
+	cursor: pointer;
+}
+
+.left-side .image-holder img {
+	height: clamp(70%, 50vw, 100%);
+	width: auto;
+
+	object-fit: contain;
 
 	border-radius: 20px;
 	animation-name: rotate-clip;
@@ -11,12 +30,6 @@
 	animation-duration: 15s;
 
 	transition: all 200ms ease-in-out;
-
-	object-fit: contain;
-}
-
-.left-side img:hover {
-	cursor: pointer;
 }
 
 .left-side .container {
@@ -31,6 +44,42 @@
 	width: calc(25vw + 16px);
 
 	font-size: 1.5rem;
+}
+
+#presentation {
+	position: absolute;
+
+	height: 100%;
+	width: 100%;
+
+	background-color: #1d1f1f00;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	transition: all 200ms ease-in;
+
+	z-index: 100;
+}
+
+#presentation:hover {
+	background-color: #1d1f1f90;
+}
+
+#presentation i {
+	opacity: 0;
+
+	font-size: 4rem;
+	color: #fff;
+
+	border-radius: 50%;
+
+	transition: all 200ms ease-in;
+}
+
+#presentation:hover i {
+	opacity: 1;
 }
 
 .subheader {

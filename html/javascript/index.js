@@ -7,9 +7,12 @@ const rightButton = document.getElementById('right-button');
 const leftImage = document.getElementById('spinning-cutter');
 const catImage = document.getElementById('willow');
 
+const presentationPlayer = document.getElementById('presentation');
+
 let going_sound = new Audio('../assets/going_button_click.mp3');
 let coming_sound = new Audio('../assets/coming_button_click.mp3');
 let meowing_sound = new Audio('../assets/meow.mp3');
+let presentation = new Audio('../assets/presentation.mp3');
 
 leftButton.addEventListener('click', () => {
 	coming_sound.currentTime = 0;
@@ -27,6 +30,21 @@ catImage.addEventListener('click', () => {
 	meowing_sound.currentTime = 0.5;
 	meowing_sound.volume = 1;
 	meowing_sound.play();
+});
+
+presentationPlayer.addEventListener('click', () => {
+	presentation.volume = 0.5;
+	if (presentation.paused) {
+		presentation.play();
+		presentationPlayer.innerHTML = '<i class="fas fa-pause"></i>';
+	} else {
+		presentation.pause();
+		presentationPlayer.innerHTML = '<i class="fas fa-play"></i>';
+	}
+});
+
+presentation.addEventListener('ended', () => {
+	presentationPlayer.innerHTML = '<i class="fas fa-play"></i>';
 });
 
 const changeToRight = () => {

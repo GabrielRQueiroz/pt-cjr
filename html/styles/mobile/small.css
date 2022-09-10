@@ -10,9 +10,8 @@
 		gap: 16px;
 	}
 
-	.left-side > img {
-		height: auto;
-		width: 50%;
+	.left-side {
+		gap: 0;
 	}
 
 	.left-side .container {
