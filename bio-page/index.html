@@ -4,39 +4,36 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="./styles/components/button.css" />
 		<link rel="stylesheet" href="./styles/components/left-side.css" />
 		<link rel="stylesheet" href="./styles/components/right-side.css" />
 		<link rel="stylesheet" href="./styles/global.css" />
 		<link rel="stylesheet" href="./styles/mobile/small.css" />
 		<script src="https://kit.fontawesome.com/69e587e431.js" crossorigin="anonymous"></script>
-		<title>Robertonto</title>
+		<title>Gabriel - O Roberto</title>
 	</head>
 	<body>
-		<header id="header">
-			<h1>Robertonto ☕</h1>
-			<h1>O Roberto 😎</h1>
+		<header>
+			<h1>O Roberto ☕</h1>
+			<nav class="button-wrapper">
+				<button type="button" aria-label="Github button" onclick="goToGithub()" class="social-button">
+					<i class="fa-brands fa-github"></i>
+				</button>
+				<button type="button" aria-label="LinkedIn button" onclick="goToLinkedIn()" class="social-button">
+					<i class="fa-brands fa-linkedin"></i>
+				</button>
+			</nav>
 		</header>
 
-		<button
-			type="button"
-			aria-label="Right arrow"
-			onclick="changeToRight()"
-			hidden
-			id="right-button"
-			class="right-button"
-		>
+		<button type="button" aria-label="Right arrow" onclick="changeToRight()" hidden id="right-button" class="right-button">
 			<div class="arrow-button-face">
 				<i class="fa-solid fa-chevron-right"></i>
 			</div>
 		</button>
-		<button
-			type="button"
-			aria-label="Left arrow"
-			onclick="changeToLeft()"
-			id="left-button"
-			class="left-button hidden"
-		>
+		<button type="button" aria-label="Left arrow" onclick="changeToLeft()" id="left-button" class="left-button hidden">
 			<div class="arrow-button-face">
 				<i class="fa-solid fa-chevron-left"></i>
 			</div>
@@ -44,19 +41,14 @@
 
 		<main>
 			<section id="left-section" class="left-side">
-				<img src="./assets/left-me.jpeg" alt="Me and my grandma" />
+				<img id="spinning-cutter" src="./assets/left-me.jpeg" alt="Eu e minha vó" />
 				<div class="container">
 					<div class="greetings">
 						<h2>Tudo bem?</h2>
 						<span class="subheader">Que tal uma conversa?</span>
 					</div>
 
-					<button
-						class="green"
-						type="button"
-						onclick="callOnWhatsApp()"
-						aria-label="WhatsApp button"
-					>
+					<button class="green" type="button" onclick="callOnWhatsApp()" aria-label="WhatsApp button">
 						<div class="button-face">
 							<i class="fa-brands fa-whatsapp"></i>
 							<span>Manda um oi!</span>
@@ -70,22 +62,12 @@
 								<i class="fa-brands fa-discord"></i>
 							</div>
 						</button>
-						<button
-							class="pink"
-							type="button"
-							onclick="callOnInstagram()"
-							aria-label="Instagram button"
-						>
+						<button class="pink" type="button" onclick="callOnInstagram()" aria-label="Instagram button">
 							<div class="button-face">
 								<i class="fa-brands fa-instagram"></i>
 							</div>
 						</button>
-						<button
-							class="black"
-							type="button"
-							onclick="callOnSteam()"
-							aria-label="Steam button"
-						>
+						<button class="black" type="button" onclick="callOnSteam()" aria-label="Steam button">
 							<div class="button-face">
 								<i class="fa-brands fa-steam"></i>
 							</div>
@@ -95,9 +77,42 @@
 			</section>
 			<section id="right-section" class="right-side">
 				<div class="container">
-					<h2>Seguro</h2>
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<i class="fa-solid fa-hat-wizard"></i>
+									<p>Gosto de RPG mas acabo nunca jogando.</p>
+								</td>
+								<td>
+									<i class="fa-solid fa-square-root-variable"></i>
+									<p>Me divirto com matemática.</p>
+								</td>
+								<td>
+									<i class="fa-solid fa-music"></i>
+									<p>Meus gêneros favoritos são lo-fi e eletrônica.</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<i class="fa-solid fa-dice"></i>
+									<p>Amo jogos de tabuleiro.</p>
+								</td>
+								<td>
+									<i class="fa-solid fa-mug-hot"></i>
+									<p>Café é gostoso, ponto.</p>
+								</td>
+								<td>
+									<i class="fa-solid fa-cat"></i>
+									<p>Tenho um gato persa bonitão.</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
-				<img src="./assets/right-me.jpeg" alt="Me and myself" />
+				<picture id="willow" class="image-holder">
+					<img src="./assets/right-willow.jpg" alt="Meu gato persa" />
+				</picture>
 			</section>
 		</main>
 

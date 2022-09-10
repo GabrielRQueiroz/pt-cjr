@@ -1,15 +1,11 @@
 /* 576px */
 
 @media screen and (max-width: 576px) {
-    header {
-        
-    }
-    
 	main > section {
 		flex-direction: column;
 
 		height: 100%;
-		width: 100%;
+		width: 100vw;
 
 		gap: 16px;
 	}
@@ -19,7 +15,60 @@
 		width: 50%;
 	}
 
-	section .container {
-		width: calc(50% + 5vw);
+	.left-side .container {
+		width: calc(50vw + 15vw);
+	}
+
+	.right-side {
+		padding-top: 24px;
+		gap: 24px;
+	}
+
+	.right-side .container {
+		height: 50%;
+		width: 85%;
+	}
+
+	.right-side .image-holder {
+		height: 15%;
+		width: auto;
+	}
+
+	.right-side .image-holder img {
+		height: 100%;
+		width: auto;
+	}
+
+	.right-side tbody {
+		flex-direction: row;
+	}
+
+	.right-side tr {
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.right-side tr:first-child {
+		border-right: 1px dashed #fafafa;
+		border-bottom: none;
+	}
+
+	.right-side td:not(:last-child) {
+		border-right: none;
+		border-bottom: 1px dashed #fafafa;
+	}
+
+	.right-side td {
+		flex-direction: row;
+
+		width: 100%;
+
+		font-size: clamp(0.8rem, 2vw, 0.9rem);
+
+		padding: 8px;
+	}
+
+	.right-side td i {
+		font-size: clamp(1.2rem, 5vw, 1.5rem);
 	}
 }

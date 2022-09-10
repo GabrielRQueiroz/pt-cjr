@@ -1,0 +1,171 @@
+.right-side {
+	gap: calc(8px + 2vw);
+}
+
+.right-side .container {
+	display: flex;
+
+	position: relative;
+
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	border: 2px #fafafa;
+	border-style: dashed;
+	border-radius: 16px;
+
+	position: relative;
+
+	height: 100%;
+	max-height: 100%;
+	width: 55vw;
+}
+
+.right-side .container::after {
+	content: 'Sobre mim';
+	position: absolute;
+
+	top: 0;
+	left: 50%;
+
+	padding: 0 4px;
+
+	border-bottom: 1px solid #fff;
+	border-top: 1px solid #fff;
+
+	transform: translateY(-50%) translateX(-50%);
+
+	width: auto;
+	height: auto;
+	background-color: #1d1f1f;
+
+	font-size: clamp(1.2rem, 5vw, 1.5rem);
+
+	text-align: center;
+}
+
+.image-holder {
+	flex-grow: 0;
+
+	width: 20%;
+	position: relative;
+
+	cursor: pointer;
+}
+
+.right-side .image-holder img {
+	height: auto;
+	width: 100%;
+
+	border-radius: 16px;
+
+	transform: rotate(5deg);
+}
+
+.right-side .image-holder::before {
+	content: 'Willow! 😺';
+	position: absolute;
+
+	height: auto;
+	width: 100%;
+
+	text-align: center;
+
+	font-size: clamp(1.25rem, 3vw, 2rem);
+	font-family: 'Qwitcher Grypen', cursive;
+
+	color: #fff;
+
+	top: 75%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+
+	transition: all 500ms ease-in-out;
+}
+
+.right-side .image-holder:hover::before {
+	top: 110%;
+}
+
+.right-side .image-holder:hover img {
+	animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+	transform: translate3d(0, 0, 0) rotate(5deg);
+	perspective: 1000px;
+}
+
+.right-side table,
+.right-side tbody {
+	height: 100%;
+	width: 100%;
+}
+
+.right-side tbody {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.right-side tr {
+	display: flex;
+
+	justify-content: space-evenly;
+	align-items: center;
+
+	flex-grow: 1;
+
+	height: 50%;
+	width: 100%;
+}
+
+.right-side tr:first-child {
+	border-bottom: 1px dashed #fafafa;
+}
+
+.right-side td:not(:last-child) {
+	border-right: 1px dashed #fafafa;
+}
+
+.right-side td {
+	display: flex;
+	flex-direction: column;
+
+	gap: 8px;
+
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;
+
+	height: 100%;
+	width: 50%;
+	padding: clamp(8px, 10vw, 12px);
+}
+
+.right-side td p {
+	position: relative;
+}
+
+.right-side td p::after {
+	content: '';
+	position: absolute;
+
+	height: 2px;
+	width: 0;
+	background-color: #fafafa;
+
+	bottom: -2px;
+	left: 50%;
+	transform: translateX(-50%);
+
+	transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.right-side td:hover p::after {
+	width: 80%;
+}
+
+.right-side td i {
+	font-size: 1.5rem;
+}

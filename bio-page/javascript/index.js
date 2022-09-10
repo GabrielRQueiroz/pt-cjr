@@ -4,21 +4,29 @@ const rightSection = document.getElementById('right-section');
 const leftButton = document.getElementById('left-button');
 const rightButton = document.getElementById('right-button');
 
-const header = document.getElementById('header');
+const leftImage = document.getElementById('spinning-cutter');
+const catImage = document.getElementById('willow');
 
 let going_sound = new Audio('../assets/going_button_click.mp3');
 let coming_sound = new Audio('../assets/coming_button_click.mp3');
+let meowing_sound = new Audio('../assets/meow.mp3');
 
 leftButton.addEventListener('click', () => {
 	coming_sound.currentTime = 0;
-	coming_sound.volume = 0.5;
+	coming_sound.volume = 0.2;
 	coming_sound.play();
 });
 
 rightButton.addEventListener('click', () => {
 	going_sound.currentTime = 0;
-	going_sound.volume = 0.5;
+	going_sound.volume = 0.2;
 	going_sound.play();
+});
+
+catImage.addEventListener('click', () => {
+	meowing_sound.currentTime = 0.5;
+	meowing_sound.volume = 1;
+	meowing_sound.play();
 });
 
 const changeToRight = () => {
@@ -28,7 +36,7 @@ const changeToRight = () => {
 	leftButton.classList.remove('hidden');
 	rightButton.classList.add('hidden');
 
-	header.style.transform = 'translateX(-50%)';
+	leftImage.style.animationPlayState = 'paused';
 };
 
 const changeToLeft = () => {
@@ -38,7 +46,7 @@ const changeToLeft = () => {
 	leftButton.classList.add('hidden');
 	rightButton.classList.remove('hidden');
 
-	header.style.transform = 'translateX(0)';
+	leftImage.style.animationPlayState = 'running';
 };
 
 const callOnWhatsApp = () => window.open('https://web.whatsapp.com/send?phone=5561983025990');
@@ -48,3 +56,7 @@ const callOnDiscord = () => window.open('https://discord.com/users/2627369365469
 const callOnSteam = () => window.open('https://steamcommunity.com/id/coffeey/');
 
 const callOnInstagram = () => window.open('https://www.instagram.com/gabriel.rqueiroz');
+
+const goToGithub = () => window.open('https://www.github.com/gabrielrqueiroz');
+
+const goToLinkedIn = () => window.open('https://www.linkedin.com/in/gabrielrqueiroz');

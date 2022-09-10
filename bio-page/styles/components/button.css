@@ -1,12 +1,10 @@
-.left-side button,
-.right-side button {
+section button {
 	position: relative;
 
 	width: 100%;
 	height: 100%;
 	border-radius: 8px;
-	background-color: #586baa;
-
+	background-image: linear-gradient(to left, hsl(226deg 40% 30%) 0%, hsl(226deg 33% 51%) 4%, hsl(226deg 33% 51%) 96%, hsl(226deg 40% 30%) 100%);
 	outline-offset: 4px;
 
 	border: none;
@@ -15,8 +13,7 @@
 	cursor: pointer;
 }
 
-.left-side .button-face,
-.right-side .button-face {
+section .button-face {
 	width: 100%;
 	height: 100%;
 
@@ -54,7 +51,7 @@ button:focus:not(:focus-visible) {
 }
 
 button.green {
-	background-color: #075e54 !important;
+	background-image: linear-gradient(to left, hsl(172deg 78% 18%) 0%, hsl(173deg 86% 22%) 4%, hsl(173deg 86% 22%) 96%, hsl(172deg 78% 18%) 100%);
 }
 
 button.green .button-face {
@@ -62,7 +59,7 @@ button.green .button-face {
 }
 
 button.pink {
-	background-color: #c13584 !important;
+	background-image: linear-gradient(to left, hsl(326deg 57% 25%) 0%, hsl(326deg 57% 48%) 4%, hsl(326deg 57% 48%) 96%, hsl(326deg 57% 25%) 100%) !important;
 }
 
 button.pink .button-face {
@@ -70,7 +67,7 @@ button.pink .button-face {
 }
 
 button.black {
-	background-color: rgb(28, 28, 28) !important;
+	background-image: linear-gradient(to left, hsl(0deg 0% 10%) 0%, hsl(0deg 0% 11%) 4%, hsl(0deg 0% 11%) 96%, hsl(0deg 0% 10%) 100%) !important;
 }
 
 button.black .button-face {
