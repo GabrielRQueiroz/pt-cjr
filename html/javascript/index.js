@@ -11,9 +11,6 @@ const aboutTable = document.getElementById('about-table');
 
 const presentationPlayer = document.getElementById('presentation');
 
-const leftFocusPoint = document.getElementById('left-focus-point');
-const rightFocusPoint = document.getElementById('right-focus-point');
-
 let going_sound = new Audio('../assets/going_button_click.mp3');
 let coming_sound = new Audio('../assets/coming_button_click.mp3');
 let meowing_sound = new Audio('../assets/meow.mp3');
