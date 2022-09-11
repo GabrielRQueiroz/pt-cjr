@@ -63,7 +63,8 @@
 	z-index: 100;
 }
 
-#presentation:hover {
+#presentation:hover,
+#presentation:focus {
 	background-color: #1d1f1f90;
 }
 
@@ -78,7 +79,8 @@
 	transition: all 200ms ease-in;
 }
 
-#presentation:hover i {
+#presentation:hover i,
+#presentation:focus i {
 	opacity: 1;
 }
 

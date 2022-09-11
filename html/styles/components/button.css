@@ -1,4 +1,4 @@
-section button {
+section > div button {
 	position: relative;
 
 	width: 100%;
@@ -13,7 +13,7 @@ section button {
 	cursor: pointer;
 }
 
-section .button-face {
+section > div .button-face {
 	width: 100%;
 	height: 100%;
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,23 +18,23 @@
 	</head>
 	<body>
 		<header>
-			<h1>O Roberto ☕</h1>
-			<nav class="button-wrapper">
-				<button type="button" aria-label="Github button" onclick="goToGithub()" class="social-button">
+			<h1 tabindex="1">O Roberto <span aria-hidden="true">☕</span></h1>
+			<div class="button-wrapper">
+				<button type="button" tabindex="1" aria-label="Acessar perfil Github" onclick="goToGithub()" class="social-button">
 					<i class="fa-brands fa-github"></i>
 				</button>
-				<button type="button" aria-label="LinkedIn button" onclick="goToLinkedIn()" class="social-button">
+				<button type="button" tabindex="1" aria-label="Acessar perfil LinkedIn" onclick="goToLinkedIn()" class="social-button">
 					<i class="fa-brands fa-linkedin"></i>
 				</button>
-			</nav>
+			</div>
 		</header>
 
-		<button type="button" aria-label="Right arrow" onclick="changeToRight()" hidden id="right-button" class="right-button">
+		<button type="button" tabindex="-1" aria-label="Mais sobre mim" onclick="changeToRight()" hidden id="right-button" class="right-button">
 			<div class="arrow-button-face">
 				<i class="fa-solid fa-chevron-right"></i>
 			</div>
 		</button>
-		<button type="button" aria-label="Left arrow" onclick="changeToLeft()" id="left-button" class="left-button hidden">
+		<button type="button" tabindex="-1" aria-label="Voltar aos contatos" onclick="changeToLeft()" id="left-button" class="left-button hidden">
 			<div class="arrow-button-face">
 				<i class="fa-solid fa-chevron-left"></i>
 			</div>
@@ -43,9 +43,9 @@
 		<main>
 			<section id="left-section" class="left-side">
 				<picture class="image-holder">
-					<div id="presentation">
+					<figure id="presentation" tabindex="2" aria-label="Pressione para uma apresentação breve sobre mim">
 						<i class="fa-solid fa-play"></i>
-					</div>
+					</figure>
 					<img id="spinning-cutter" src="./assets/left-me.jpeg" alt="Eu e minha vó" />
 				</picture>
 				<div class="container">
@@ -54,7 +54,7 @@
 						<span class="subheader">Que tal uma conversa?</span>
 					</div>
 
-					<button class="green" type="button" onclick="callOnWhatsApp()" aria-label="WhatsApp button">
+					<button class="green" type="button" tabindex="3" onclick="callOnWhatsApp()" aria-label="Conversar comigo pelo WhatsApp">
 						<div class="button-face">
 							<i class="fa-brands fa-whatsapp"></i>
 							<span>Manda um oi!</span>
@@ -63,17 +63,17 @@
 					<p class="separator">ou aqui</p>
 
 					<div class="button-holder">
-						<button type="button" onclick="callOnDiscord()" aria-label="Discord button">
+						<button type="button" tabindex="4" onclick="callOnDiscord()" aria-label="Conversar comigo pelo Discord">
 							<div class="button-face">
 								<i class="fa-brands fa-discord"></i>
 							</div>
 						</button>
-						<button class="pink" type="button" onclick="callOnInstagram()" aria-label="Instagram button">
+						<button class="pink" type="button" tabindex="5" onclick="callOnInstagram()" aria-label="Conversar comigo pelo Instagram">
 							<div class="button-face">
 								<i class="fa-brands fa-instagram"></i>
 							</div>
 						</button>
-						<button class="black" type="button" onclick="callOnSteam()" aria-label="Steam button">
+						<button onfocus="changeToLeft()" class="black" type="button" tabindex="6" onclick="callOnSteam()" aria-label="Conversar comigo pela Steam">
 							<div class="button-face">
 								<i class="fa-brands fa-steam"></i>
 							</div>
@@ -83,32 +83,32 @@
 			</section>
 			<section id="right-section" class="right-side">
 				<div class="container">
-					<table>
+					<table onfocus="changeToRight()" id="about-table" tabindex="9" aria-label="Sobre mim">
 						<tbody>
 							<tr>
-								<td>
+								<td tabindex="10">
 									<i class="fa-solid fa-hat-wizard"></i>
 									<p>Gosto de RPG mas acabo nunca jogando.</p>
 								</td>
-								<td>
+								<td tabindex="10">
 									<i class="fa-solid fa-square-root-variable"></i>
 									<p>Me divirto com matemática.</p>
 								</td>
-								<td>
+								<td tabindex="10">
 									<i class="fa-solid fa-music"></i>
-									<p>Meus gêneros favoritos são lo-fi e eletrônica.</p>
+									<p>Meus gêneros favoritos são lo<span aria-hidden="true">-</span>fi e eletrônica.</p>
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td tabindex="10">
 									<i class="fa-solid fa-dice"></i>
 									<p>Amo jogos de tabuleiro.</p>
 								</td>
-								<td>
+								<td tabindex="10">
 									<i class="fa-solid fa-mug-hot"></i>
 									<p>Café é gostoso, ponto.</p>
 								</td>
-								<td>
+								<td tabindex="10">
 									<i class="fa-solid fa-cat"></i>
 									<p>Tenho um gato persa bonitão.</p>
 								</td>
@@ -116,9 +116,9 @@
 						</tbody>
 					</table>
 				</div>
-				<picture id="willow" class="image-holder">
+				<button type="button" tabindex="11" aria-label="Esse é meu gato. Pressione para ouvir seu miado." id="willow" class="image-holder">
 					<img src="./assets/right-willow.jpg" alt="Meu gato persa" />
-				</picture>
+				</button>
 			</section>
 		</main>
 

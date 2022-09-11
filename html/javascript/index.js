@@ -7,7 +7,12 @@ const rightButton = document.getElementById('right-button');
 const leftImage = document.getElementById('spinning-cutter');
 const catImage = document.getElementById('willow');
 
+const aboutTable = document.getElementById('about-table');
+
 const presentationPlayer = document.getElementById('presentation');
+
+const leftFocusPoint = document.getElementById('left-focus-point');
+const rightFocusPoint = document.getElementById('right-focus-point');
 
 let going_sound = new Audio('../assets/going_button_click.mp3');
 let coming_sound = new Audio('../assets/coming_button_click.mp3');
@@ -32,6 +37,14 @@ catImage.addEventListener('click', () => {
 	meowing_sound.play();
 });
 
+catImage.addEventListener('keydown', (e) => {
+	if (e.key == 'Enter' || e.key == 'Whitespace') {
+		meowing_sound.currentTime = 0.5;
+		meowing_sound.volume = 1;
+		meowing_sound.play();
+	}
+});
+
 presentationPlayer.addEventListener('click', () => {
 	presentation.volume = 0.5;
 	if (presentation.paused) {
@@ -44,6 +57,7 @@ presentationPlayer.addEventListener('click', () => {
 });
 
 presentation.addEventListener('ended', () => {
+	presentation.currentTime = 0.2;
 	presentationPlayer.innerHTML = '<i class="fas fa-play"></i>';
 });
 
