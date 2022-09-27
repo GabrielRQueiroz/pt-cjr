@@ -10,7 +10,7 @@
 
 > [Acesso à página ↗️](https://robertonto.netlify.app/)
 
-👉 **JAVASCRIPT** - Coming soon...
+👉 **JAVASCRIPT** - Exercícios de Javascript de simples a complexo.
 
 👉 **DATABASE** - Coming soon...
 
