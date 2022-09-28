@@ -8,7 +8,7 @@
 
 👉 **HTML** - Página biográfica de ninguém mais ninguém menos que eu mesmo.
 
-> [Acesso à página ↗️](https://robertonto.netlify.app/)
+> [Acesso à página ↗️](https://pt-cjr-robertonto.netlify.app/)
 
 👉 **JAVASCRIPT** - Exercícios de Javascript de simples a complexo.
 
